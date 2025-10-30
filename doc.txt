@@ -2,3 +2,34 @@ To execute the api branch workflow:
 	 git push origin api
 
 Otherwise (I assume) this will run on the main branch, which does not have an api.
+
+
+
+
+
+tuto du prof:
+1. Forker le dépôt templateWeb et basculer sur la branche API
+2. Modifier le workflow GitHub en adaptant le nom de l’image à votre dépôt
+3. Créer une base PostgreSQL sur Render.com
+4. Se connecter à la base avec pgAdmin à l’aide des credentials Render
+5. Créer la table pollution
+6. Modifier les credentials dans le fichier config de la branche API puis push
+7. Créer un service Web Render lié à la branche API
+8. Tester l’API via /api/catalogue
+9. Récupérer l’URI du Hook Render
+10. Créer un secret GitHub nommé API contenant ce Hook
+11. Créer le modèle Sequelize pour la table pollution
+12. Ajouter une route GET /api/pollution
+13. Créer le contrôleur associé à cette route
+14. Push les modifications
+15. Tester le fonctionnement de l’API
+
+
+le lien:
+	postgresql://api_postgres_ryy1_user:yL2wyfp1sGIkKBRwPQIkl1b44MmXvj9z@dpg-d41mvchr0fns73cjb6i0-a.oregon-postgres.render.com/api_postgres_ryy1
+
+
+
+
+
+
