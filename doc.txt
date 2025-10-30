@@ -1,0 +1,4 @@
+To execute the api branch workflow:
+	 git push origin api
+
+Otherwise (I assume) this will run on the main branch, which does not have an api.
