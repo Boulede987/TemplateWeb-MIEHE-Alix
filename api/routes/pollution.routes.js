@@ -1,7 +1,7 @@
 
 
 module.exports = app => {
-    const catalogue = require("../controllers/catalogue.controllers.js");
+    const pollution = require("../controllers/pollution.controllers.js");
   
     var router = require("express").Router();
   
@@ -9,5 +9,5 @@ module.exports = app => {
    
     router.get("/", catalogue.get);
   
-    app.use('/api/catalogue', router);
+    app.use('/api/pollution', router);
   };
