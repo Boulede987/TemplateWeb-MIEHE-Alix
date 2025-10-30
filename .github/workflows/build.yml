@@ -10,7 +10,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ghcr.io/boulede987/templateweb-miehe-alix:api
+  IMAGE_NAME: boulede987/templateweb-miehe-alix
 
 jobs:
   build-and-publish:
