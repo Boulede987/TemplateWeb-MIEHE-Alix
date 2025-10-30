@@ -2,43 +2,45 @@ const { v4: uuidv4 } = require ("uuid");
 
 
 const db = require("../models");
-const Utilisateurs = db.utilisateurs;
+const Pollutions = db.pollution;
 const Op = db.Sequelize.Op;
 
 // Find a single Utilisateur with an login
-exports.login = (req, res) => {
-  const utilisateur = {
-    login: req.body.login,
-    password: req.body.password
-  };
+exports.getPollution = (req, res) => 
+{
 
-  // Test
-  let pattern = /^[A-Za-z0-9]{1,20}$/;
-  if (pattern.test(utilisateur.login) && pattern.test(utilisateur.password)) {
-     Utilisateurs.findOne({ where: { login: utilisateur.login } })
-    .then(data => {
-      if (data) {
-        const user = {
-          id: data.id,
-          name: data.nom,
-          email: data.email
-        };
-      
-        res.send(data);
-      } else {
-        res.status(404).send({
-          message: `Cannot find Utilisateur with login=${utilisateur.login}.`
-        });
-      }
-    })
-    .catch(err => {
-      res.status(400).send({
-        message: "Error retrieving Utilisateur with login=" + utilisateur.login
+
+  Pollutions.findAll()
+  .then(data => {
+
+    if (data) {
+
+      const pollution = {
+        id: data.id,
+        titre: data.titre,
+        type_pollution: data.type_pollution,
+        description: data.description,
+        date_Observation: data.date_Observation,
+        lieu: data.lieu,
+        latitude: data.latitude,
+        longitude: data.longitude,
+        photo_url: data.photo_url
+      };
+    
+      // res.send(data);
+      res.send(pollution);
+
+    } else {
+      res.status(404).send({
+        message: `Cannot find pollutions.`
       });
-    });
-  } else {
+    }
+  })
+  .catch(err => {
     res.status(400).send({
-      message: "Login ou password incorrect" 
+      message: "Error retrieving pollutions"
     });
-  }
+  });
+
+
 };
