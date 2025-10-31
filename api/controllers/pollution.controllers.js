@@ -7,7 +7,7 @@ const Op = db.Sequelize.Op;
 
 exports.get = (req, res) => {
 
-     Pollution.findAll()
+    Pollution.findAll()
     .then(data => {res.send(data);})
     .catch(err => {
       res.status(400).send({
