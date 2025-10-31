@@ -7,7 +7,10 @@ module.exports = app => {
   
 
    
-    router.get("/", catalogue.get);
+    router.get("/", pollution.get);
   
     app.use('/api/pollution', router);
   };
+
+
+  

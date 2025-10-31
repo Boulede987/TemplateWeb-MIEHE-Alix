@@ -1,4 +1,3 @@
- 
 module.exports = (sequelize, Sequelize) => {
   const Pollution = sequelize.define("pollution", {
     id: {
@@ -7,17 +6,17 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: false,
       autoIncrement: true
     },
-    nom: {
+    titre: {
       type: Sequelize.STRING,
       allowNull: false
     },
     lieu: {
       type: Sequelize.STRING
     },
-    dateObservation: {
+    date_observation: {
       type: Sequelize.DATE
     },
-    typePollution: {
+    type_pollution: {
       type: Sequelize.STRING
     },
     description: {
@@ -30,13 +29,10 @@ module.exports = (sequelize, Sequelize) => {
     longitude: {
       type: Sequelize.DECIMAL(9,6)
     },
-    imageUrl: {
+    photo_url: {
       type: Sequelize.STRING
     }
-  }, {
-    timestamps: false,
-    tableName: "pollution"
   });
 
   return Pollution;
-};
+}; 
