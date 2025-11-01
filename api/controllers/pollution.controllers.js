@@ -17,3 +17,24 @@ exports.get = (req, res) => {
 
 }; 
 
+
+
+exports.getById = (req, res) => {
+    const id = req.params.id;
+    
+    Pollution.findByPk(id)
+    .then(data => {
+        if (!data) {
+            return res.status(404).send({
+                message: `Pollution with id=${id} not found.`
+            });
+        }
+        res.send(data);
+    })
+    .catch(err => {
+        res.status(400).send({
+            message: err.message
+        });
+    });
+};
+
