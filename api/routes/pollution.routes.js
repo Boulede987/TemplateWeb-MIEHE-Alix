@@ -9,6 +9,7 @@ module.exports = app => {
    // nos routes / urls
     router.get("/", pollution.get);
     router.get("/:id", pollution.getById);
+    router.post("/", pollution.post);
   
     app.use('/api/pollution', router);
   };
