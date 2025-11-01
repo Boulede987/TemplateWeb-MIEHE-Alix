@@ -10,7 +10,8 @@ module.exports = app => {
     router.get("/", pollution.get);
     router.get("/:id", pollution.getById);
     router.post("/", pollution.post);
-  
+    router.put("/:id", pollution.put);
+
     app.use('/api/pollution', router);
   };
 

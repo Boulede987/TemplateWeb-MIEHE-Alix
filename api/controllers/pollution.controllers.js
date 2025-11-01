@@ -102,3 +102,37 @@ exports.post = (req, res) => {
 };
 
 
+
+
+exports.put = (req, res) => {
+  const id = req.params.id;
+
+  // Validate request
+  if (!req.body.titre) {
+    res.status(400).send({
+      message: "Titre ne peu pas être vide!"
+    });
+    return;
+  }
+
+  // Update Pollution in the database
+  Pollution.update(req.body, {
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Pollutioon à étée mise à jour."
+        });
+      } else {
+        res.send({
+          message: `Impossible de mettre à jour la pollution avec l'id=${id}. La pollution n'as pas étée trouvée ou req.body est vide!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: `Erreur de mise à jour de la pollution avec l'id=${id}: ${err.message}`
+      });
+    });
+};
