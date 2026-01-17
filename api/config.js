@@ -1,13 +1,13 @@
 module.exports =  {
     ACCESS_TOKEN_SECRET : "EMMA123",
     BDD : {
-    "host" :"dpg-d4te919r0fns73dchmqg-a.oregon-postgres.render.com",
+    "host" :"dpg-d5kglu94tr6s73aubqf0-a.oregon-postgres.render.com",
     "port" : "5432",
-    "user" : "pollution_26jl_user",
-    "password" : "g1ehsA3f4jbNyvoT2EuMgyMSX47zeXC5",
-    "bdname" :"pollution_26jl" 
+    "user" : "projet_pollution_zj8k_user",
+    "password" : "1MYZrvrTXige1zN1gFPZ6FdqjT432cM1",
+    "bdname" :"projet_pollution_zj8k" 
     }
 }
 
 
-// postgresql://pollution_26jl_user:g1ehsA3f4jbNyvoT2EuMgyMSX47zeXC5@dpg-d4te919r0fns73dchmqg-a.oregon-postgres.render.com/pollution_26jl
+// postgresql://projet_pollution_zj8k_user:1MYZrvrTXige1zN1gFPZ6FdqjT432cM1@dpg-d5kglu94tr6s73aubqf0-a.oregon-postgres.render.com/projet_pollution_zj8k
